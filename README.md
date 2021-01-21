@@ -4,12 +4,13 @@
 In this project we perform convolution operation.
 
 
-Table of Contents:
-1. Naive implementation of convolution in C
+## Table of Contents:
+1. Naive implementation of convolution in C.
 2. Quantizing the naive implemetation of convolution using lower precisions.
-3. Applying CPU vectorization using AVX instructions and Pthreads
-4. GPU vectorization using CUDA
-5. Analysis
+3. Applying CPU vectorization using AVX instructions and Pthreads.
+4. GPU vectorization using CUDA.
+5. Analysis.
+6. References.
 
 
 ## Naive implementation of convolution operation
