@@ -1,11 +1,11 @@
 # Quantized Covolution
 
 
-In this project we perform convolution operation.
+The purpose of this project is to compare different means of computing convolution operation, and see if naive quantinization actually speed ups operation.
 
 
 ## Table of Contents:
-1. Naive implementation of convolution in C.
+1. Naive implementation of convolution in C language.
 2. Quantizing the naive implemetation of convolution using lower precisions.
 3. Applying CPU vectorization using AVX instructions and Pthreads.
 4. GPU vectorization using CUDA.
@@ -33,7 +33,9 @@ Finally, I implemented the convolution using CUDA. The corresponding .cu file an
 
 ## Analysis
 
-![alt text](https://github.com/MrPositron/Quantized-Covolution/blob/main/analysis.png)
+<p align="center">
+  <img width="283" height="577" src="https://github.com/MrPositron/Quantized-Covolution/blob/main/analysis.png">
+</p>
 
 1. From the figure above it can be clearly seen that pthread with AVX instructions using 16 bit integers performs better than other data types. However the margin is really small. Thus, if you will use pthreads with AVX instructions, it is better to use floating numbers. Because it will have no loss in accuracy.
 If there are no opportunities to use pthreads with avx instructions then we can consider using 8 bit integers. However, we must keep in mind that in an 8 bit integer implementation we use 16 bit integers to accumulate the sum. Therefore, it is not pure 8 bit integer implementation. This implementation leads to 2x speedup over 32 bit floating numbers with a slight loss in accuracy. In Figure 1 there are two CUDA lines. One represents total time, and second represents time only for CUDA multiplication (without transferring data from host to CUDA). Thus, it can be clearly seen that exchanging data is a bottleneck for the implementation with a CUDA. It is interesting to notice how fast matrix multiplication is without considering data movements between storages. Another interesting point is that time spent with CUDA is nearly the same with different sizes of input and kernel.
