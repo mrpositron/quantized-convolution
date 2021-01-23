@@ -13,28 +13,28 @@ The purpose of this project is to compare different means of computing convoluti
 6. References.
 
 
-## Naive implementation of convolution operation
+## 1. Naive implementation of convolution operation
 
 The algorithm that I used to perform convolution was im2col mentioned in [1]. Simply speaking we transform the convolution operation using one big dot product.
 
 The code implementation can be found in the folder prob1.
 
-## Quantizing the naive implementation of Convolution using lower precision data types.
+## 2. Quantizing the naive implementation of Convolution using lower precision data types.
 
 Using lower precision values can greatly improve the running time of the algorithm. The reason for that is that there will be less data movement from the memory. The code with the corresponding makefile can be found in the folder prob2.
 
-## Applying CPU vectorization using AVX instructions and Pthreads
+## 3. Applying CPU vectorization using AVX instructions and Pthreads
 
 By applying vectorization using AVX and Pthreads we can speed up the algorithm. The source code with corresponding makefile can be found in the folder prob3.
 
-## GPU vectorization using CUDA
+## 4. GPU vectorization using CUDA
 
 Finally, I implemented the convolution using CUDA. The corresponding .cu file and makefile can be found in prob4.
 
-## Analysis
+## 5. Analysis
 
 <p align="center">
-  <img width="283" height="577" src="https://github.com/MrPositron/Quantized-Covolution/blob/main/analysis.png">
+  <img width="283" height="577" src="https://github.com/MrPositron/Quantized-Covolution/blob/main/analysis1.png">
 </p>
 
 1. From the figure above it can be clearly seen that pthread with AVX instructions using 16 bit integers performs better than other data types. However the margin is really small. Thus, if you will use pthreads with AVX instructions, it is better to use floating numbers. Because it will have no loss in accuracy.
@@ -47,3 +47,4 @@ If there are no opportunities to use pthreads with avx instructions then we can 
 
 4. In my opinion, the naive quantization is justified. However, there should be a clever way to choose constants. Choosing optimal constants is a really arduous process. The process for searching them is non-linear. For example, increasing the scaling constant does not always decrease NRMS error. There are several works that suggest using Reinforcement Learning agents to search for the optimal quantization bit numbers [2]. Naive quantization can be sub-optimal. Nevertheless, it shows that we can greatly speed-up inference without hurting the accuracy of the network. In my opinion, acceptable NRMSE is around ~0.01.
 
+## 6. References
