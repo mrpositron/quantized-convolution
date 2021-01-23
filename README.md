@@ -15,9 +15,7 @@ The purpose of this project is to compare different means of computing convoluti
 
 ## 1. Naive implementation of convolution operation
 
-The algorithm that I used to perform convolution was im2col mentioned in [1]. Simply speaking we transform the convolution operation using one big dot product.
-
-The code implementation can be found in the folder prob1.
+The algorithm to perform convolution was using im2col technique mentioned in [1]. Simply speaking, transformations to the input and kernel matrices are made so that only one dot product is needed to compute convolution. The code implementation and additional details can be found in the folder prob1.
 
 ## 2. Quantizing the naive implementation of Convolution using lower precision data types.
 
@@ -48,3 +46,5 @@ If there are no opportunities to use pthreads with avx instructions then we can 
 4. In my opinion, the naive quantization is justified. However, there should be a clever way to choose constants. Choosing optimal constants is a really arduous process. The process for searching them is non-linear. For example, increasing the scaling constant does not always decrease NRMS error. There are several works that suggest using Reinforcement Learning agents to search for the optimal quantization bit numbers [2]. Naive quantization can be sub-optimal. Nevertheless, it shows that we can greatly speed-up inference without hurting the accuracy of the network. In my opinion, acceptable NRMSE is around ~0.01.
 
 ## 6. References
+
+[1] - https://cs231n.github.io/convolutional-networks/
