@@ -5,6 +5,7 @@ The purpose of this project is to compare different means of computing convoluti
 
 
 ## Table of Contents:
+0. Data
 1. Naive implementation of convolution in C language.
 2. Quantizing the naive implemetation of convolution using lower precisions.
 3. Applying CPU vectorization using AVX instructions and Pthreads.
@@ -12,6 +13,22 @@ The purpose of this project is to compare different means of computing convoluti
 5. Analysis.
 6. References.
 
+## 0. Data
+
+All experimets were performed on three combinations of input and kernel tensors. Download the following data.zip from this link.
+
+The structure of the data folder:
+
+* data.zip
+  * sample 1
+    * input_tensor.bin
+    * kernel_tensor.bin
+  * sample 2
+    * input_tensor.bin
+    * kernel_tensor.bin
+  * sample 3
+    * input_tensor.bin
+    * kernel_tensor.bin
 
 ## 1. Naive implementation of convolution operation
 
