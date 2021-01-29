@@ -12,6 +12,6 @@ The result of the convolution operation will be saved in output_tensot.bin file.
 
 | The name of folders that contains input tensor and kernel tensor | Inference time (in milliseconds) |
 |-------------------------------------------------------------------|----------------------------------|
-| folder 1                                                            | 136.000                          |
-| folder 2                                                            | 369.055                          |
-| folder 3                                                            | 706.000                          |
+| sample 1                                                            | 136.000                          |
+| sample 2                                                            | 369.055                          |
+| sample 3                                                            | 706.000                          |
