@@ -15,7 +15,7 @@ The purpose of this project is to compare different means of computing convoluti
 
 ## 0. Data
 
-All experimets were performed on three combinations of input and kernel tensors. Download the following data.zip from this link.
+All experimets were performed on three combinations of input and kernel tensors. Download the following data.zip from this [link](https://drive.google.com/file/d/1kVrZ03pIykRpTehYglW8ykRLqIdr2JEk/view?usp=sharing).
 
 The structure of the data folder:
 
