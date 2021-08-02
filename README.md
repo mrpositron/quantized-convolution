@@ -1,7 +1,7 @@
 # Quantized Covolution
 
 
-The purpose of this project is to compare different means of computing convolution operation, and see if naive quantinization actually speed ups operation.
+The purpose of this project is to compare different means of computing convolution operation, and see if naive quantiization actually speed ups operation.
 
 
 ## Table of Contents:
